@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Flux probing theory creates ultra-wideband videos from timestamp streams.">
+  <meta name="keywords" content="SPADs, Computational Photography, Computational Imaging, Single-photon Imaging">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Passive Ultra-Wideband Single-Photon Imaging</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/logo.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  
+  <style>
+    .flex-carousel-container.right .slider {
+      margin-right: 0;
+    }
+  </style>
+  
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://compimaging.dgp.toronto.edu/ultra-wideband">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Passive Ultra-Wideband Single-Photon Imaging</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://mianwei.ca">Mian Wei</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://sotirisnousias.com">Sotiris Nousias</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://rahulgulve.com">Rahul Gulve</a>,
+            </span>
+            <span class="author-block">
+              <a href="http://davidlindell.com">David B. Lindell</a>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.cs.toronto.edu/~kyros/">Kiriakos N. Kutulakos</a>
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">ICCV 2023 (Oral)</span>
+          </div>
+          <div class="is-size-7 publication-authors">
+            <span class="author-block"><sup>*</sup>Joint first authors</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/docs/paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="./static/docs/supp/supp.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Supplementary</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="./static/docs/supp/supp.mp4"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link.
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>-->
+              <!-- Dataset Link.
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+                </span>-->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light teaser">
+  <div class="container is-max-desktop" style="padding-top: 1rem;">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/teaser/teaser_withstamps.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Passive ultra-wideband single-photon imaging</span> passively captures dynamic scene once and allows re-rendering of video across 9+ orders of magnitude in time.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          We consider the problem of imaging a dynamic scene over an extreme range of timescales simultaneously—seconds to picoseconds—and doing so passively, without much light, and without any timing signals from the light source(s) emitting it.
+          </p>
+          <p>Because existing flux estimation techniques for single-photon cameras break down in this regime, we develop a flux probing theory that draws insights from stochastic calculus to enable reconstruction of a pixel’s time-varying flux from a stream of monotonically-increasing photon detection timestamps. We use this theory to (1) show that passive free-running SPAD cameras have an attainable frequency bandwidth that spans the entire DC-to-31 GHz range in low-flux conditions, (2) derive a novel Fourier-domain flux reconstruction algorithm that scans this range for frequencies with statistically-significant support in the timestamp data, and (3) ensure the algorithm’s noise model remains valid even for very low photon counts or non-negligible dead times.
+          </p>
+          <p>We show the potential of this asynchronous imaging regime by experimentally demonstrating several never-seen-before abilities: (1) imaging a scene illuminated simultaneously by sources operating at vastly different speeds without synchronization (bulbs, projectors, multiple pulsed lasers), (2) passive non-line-of-sight video acquisition, and (3) recording ultra-wideband video, which can be played back later at 30 Hz to show everyday motions—but can also be played a billion times slower to show the propagation of light itself.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="./static/docs/supp/iccv-final.mp4"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!--/ Matting. -->
+    <!-- Flux probing -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Flux Probing</h2>
+
+        <!-- Counting process -->
+        <h3 class="title is-4" align="left">Photon arrivals</h3>
+        <div class="columns"> <!-- This is a Bulma container for a row of columns -->
+            <div class="column"> <!-- This represents a column and it will automatically adjust its width to fit its parent container -->
+                <video id="dollyzoom" autoplay controls muted loop playsinline height="50%">
+                    <!--<source src="./static/videos_main/photon_animation/flux2_8.mp4" type="video/mp4">-->
+                    <source src="./static/videos_main/photon_animation/flux2_8.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+            <div class="column">
+                <p> Our theory is based on the observation that photon arrivals (white dots in illustration) are rich with information about their underlying flux function (cyan plot). While we cannot measure the flux directly, the photon arrivals can be used to indirectly observe the flux. </p>
+            </div>
+
+        </div>
+        <!--/ Counting process -->
+
+        <!-- Flux Reconstruction -->
+        <h3 class="title is-4" align="right">Flux reconstruction</h3>
+        <div class="columns"> <!-- This is a Bulma container for a row of columns -->
+            <div class="column">
+                <p> We show a simulated stream of photon arrivals with a flux function (top plot) containing 3 frequencies. Using our flux reconstruction algorithm, we can scan the frequencies of the flux function and estimate its Fourier coefficients (bottom left plot). Using a statistical threshold (red curve), we can remove noisy frequencies and reconstruct the flux function (bottom right plot).   </p>
+            </div>
+            
+            <div class="column"> <!-- This represents a column and it will automatically adjust its width to fit its parent container -->
+                <video id="dollyzoom" autoplay controls muted loop playsinline height="50%">
+                    <source src="./static/videos_main/flux_probing/flux_probe.mp4" type="video/mp4">
+                </video>
+            </div>
+
+        </div>
+        <!--/ Flux Reconstruction -->
+        
+      </div>
+    </div>
+    
+    
+    <!-- Ultra-wideband Imaging -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+
+        <!-- Interpolating. -->
+        <h3 class="title is-4">Passive ultra-wideband 1D imaging</h3>
+        <div class="columns"> <!-- This is a Bulma container for a row of columns -->
+            <div class="column">
+                <img src="./static/images/setup.png"
+                     class="interpolation-image"
+                     alt="Interpolate start reference image."/>
+            </div>
+            <div class="column">
+                <video id="dollyzoom" autoplay controls muted loop playsinline>
+                    <source src="./static/videos_main/gui/gui.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="column">
+              <p>
+              We demonstrate recovering signals with frequencies spanning roughly 9 orders of magnitude from DC to 10 GHz. We place a single-pixel SPAD in the scene to capture flux variations from (1) pulse-width modulation of a light bulb (900 Hz), (2) backscattered light from a raster-scanning laser projector (60 Hz–10 MHz), and (3) two unsynchronized picosecond lasers (40 MHz–10 GHz). The 1D plot directly visualizes the flux function across multiple timescales
+              </p>
+            </div>
+        </div>
+        <!--<div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div>
+        </div>-->
+        <br/>
+        <!--/ Interpolating. -->
+        <!-- NLOS. -->
+        <h3 class="title is-4" align="Right">Passive non-line-of-sight video</h3>
+        <div class="columns"> <!-- This is a Bulma container for a row of columns -->
+            <div class="column">
+                <p> We demonstrate passive NLOS video reconstruction using light measured indirectly from a raster-scanning laser projector. The SPAD observes a single point on a diffuse box during the projector beam’s raster scan, collecting light that bounced twice (i.e., diffuser→diffuse box→SPAD). This configuration is analogous to <a href="https://graphics.stanford.edu/papers/dual_photography/">dual photography</a>. By reconstructing the 1D flux function over a one-second span, we recover the video being played. We show 1-second reconstructions for non-overlapping exposure times.
+            </div>
+            <div class="column" style="padding-right: 0.5rem;"> <!-- This represents a column and it will automatically adjust its width to fit its parent container -->
+                <div class="flex-carousel-container">
+                     <div id="results-carousel" class="carousel results-carousel" data-slides-to-show="1">
+                         <div class="item seets3">
+                             <video id="mgm3" autoplay controls muted loop playsinline width="100%">
+                                 <source src="./static/videos_main/NLOS/nlos_3_4.mp4" type="video/mp4">
+                             </video>
+                         </div>
+                         <div class="item seets4">
+                             <video id="mgm4" autoplay controls muted loop playsinline width="100%">
+                                 <source src="./static/videos_main/NLOS/nlos_4_5.mp4" type="video/mp4">
+                             </video>
+                         </div>
+                       <div class="item seets1">
+                           <video id="mgm1" autoplay controls muted loop playsinline width="100%">
+                               <source src="./static/videos_main/NLOS/nlos_1_2.mp4" type="video/mp4">
+                           </video>
+                       </div>
+                       <div class="item seets2">
+                           <video id="mgm2" autoplay controls muted loop playsinline width="100%">
+                               <source src="./static/videos_main/NLOS/nlos_2_3.mp4" type="video/mp4">
+                           </video>                       </div>
+
+                     </div>
+                 
+                </div>
+                
+
+            </div>
+            
+
+
+        </div>
+        <!--/ NLOS. -->
+        
+        
+        <!-- Video. -->
+        <h3 class="title is-4" align="Left">Passive ultra-wideband video</h3>
+        <div class="columns"> <!-- This is a Bulma container for a row of columns -->
+            <div class="column" style="padding-left: 0.5rem;"> <!-- This represents a column and it will automatically adjust its width to fit its parent container -->
+                <div class="flex-carousel-container">
+                  <div id="results-carousel" class="carousel results-carousel" data-slides-to-show="1" data-autoplay="true" data-autoplay-speed="10000" data-pagination="false">
+                      <div class="item item-300">
+                        <video poster="" id="teaser300" autoplay controls muted loop playsinline height="50%">
+                          <source src="./static/videos_main/passive2d_coverted/300Hz_H264.mp4"
+                                  type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="item item-1k">
+                        <video poster="" id="teaser1k" autoplay controls muted loop playsinline height="50%">
+                          <source src="./static/videos_main/passive2d_coverted/1KHz_H264.mp4"
+                                  type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="item item-2k">
+                        <video poster="" id="teaser2k" autoplay controls muted loop playsinline height="50%">
+                          <source src="./static/videos_main/passive2d_coverted/2KHz_H264.mp4"
+                                  type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="item item-10k">
+                        <video poster="" id="teaser10k" autoplay controls muted loop playsinline height="50%">
+                          <source src="./static/videos_main/passive2d_coverted/10KHz_H264.mp4"
+                                  type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="item item-100k">
+                        <video poster="" id="teaser10k" autoplay controls muted loop playsinline height="50%">
+                          <source src="./static/videos_main/passive2d_coverted/100KHz_H264.mp4"
+                                  type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="item item-30M">
+                        <video poster="" id="teaser10k" autoplay controls muted loop playsinline height="50%">
+                          <source src="./static/videos_main/passive2d_coverted/30MHz_H264.mp4"
+                                  type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="item item-200M">
+                        <video poster="" id="teaser200M" autoplay controls muted loop playsinline height="50%">
+                          <source src="./static/videos_main/passive2d_coverted/200MHz_H264.mp4"
+                                  type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="item item-10G">
+                        <video poster="" id="teaser10G" autoplay controls muted loop playsinline height="50%">
+                          <source src="./static/videos_main/passive2d_coverted/10GHz_H264.mp4"
+                                  type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="item item-250G">
+                        <video poster="" id="teaser250G" autoplay controls muted loop playsinline height="50%">
+                          <source src="./static/videos_main/passive2d_coverted/250GHz_H264.mp4"
+                                  type="video/mp4">
+                        </video>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <p> We also demonstrate passive ultra-wideband video by raster scanning a scene in which a pulsed laser, with 20 MHz repetition and 80 ps FWHM, is diffused to illuminate a fan spinning at 54 Hz. Our method can render the flux at whatever timescale, essentially freezing time at all timescales. This allows us to show both the fan blades rotating and the propagation of the laser pulse. In contrast, conventional approaches reconstruct the scene at only one of the aforementioned frame rates, temporally blurring either slow or fast events. </p>
+            </div>
+            
+
+
+        </div>
+        <!--/ Video. -->
+        
+        <h3 class="title is-4" align="Right">Flux probing with 2D SPAD arrays</h3>
+        <div class="columns"> <!-- This is a Bulma container for a row of columns -->
+            <div class="column is-three-quarters" >
+                <p> Our method can be applied off the shelf to data from 2D SPAD sensors. To demonstrate this, we apply flux probing to the data from <a href="https://openaccess.thecvf.com/content/WACV2021/html/Seets_Motion_Adaptive_Deblurring_With_Single-Photon_Cameras_WACV_2021_paper.html">Seets et al</a> to recover high-speed video with a 32×32 SPAD array.
+            </div>
+            
+            <div class="column is-one-quarters" style="padding-right: 0.5rem;"> <!-- This represents a column and it will automatically adjust its width to fit its parent container -->
+                <!--<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+                   <source src="./static/videos_main/seets/50K_h264.mp4" type="video/mp4">
+               </video>-->
+                
+                <div class="flex-carousel-container right">
+                     <div id="results-carousel" class="carousel results-carousel" data-slides-to-show="1">
+                       <div class="item seets1">
+                         <video poster="" id="seets1" autoplay controls muted loop playsinline height="50%">
+                           <source src="./static/videos_main/seets_labeled/50k_h264.mp4"
+                                   type="video/mp4">
+                         </video>
+                       </div>
+                       <div class="item seets2">
+                         <video poster="" id="seets2" autoplay controls muted loop playsinline height="50%">
+                             <source src="./static/videos_main/seets_labeled/500k_h264.mp4"
+                                     type="video/mp4">
+                         </video>
+                       </div>
+                       <div class="item seets3">
+                         <video poster="" id="seets3" autoplay controls muted loop playsinline height="50%">
+                             <source src="./static/videos_main/seets_labeled/5M_h264.mp4"
+                                     type="video/mp4">
+                         </video>
+                       </div>
+                     </div>
+                 
+                </div>
+
+            </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Animation. -->
+  
+ </div>
+  <!-- Carousel wrapper -->
+  
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{wei2023ultrawideband,
+  author    = {Wei, Mian and Nousias, Sotiris and Gulve, Rahul and Lindell, David B and Kutulakos, Kiriakos N},
+  title     = {Passive Ultra-Wideband Single-Photon Imaging},
+  booktitle   = {Proc. ICCV},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+            <p>We gratefully acknowledge the support of NSERC under the RGPIN and RTI programs.
+            </p>
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            We use the website template from <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. Thank you!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+  <script>
+    // Fix carousel width for in-column case (unbounded width caused by flexbox container)
+    const carouselContainerEls = document.getElementsByClassName("flex-carousel-container");
+    // console.log("Fixed the size of: ");
+    for (let element of carouselContainerEls) {
+      // console.log(element);
+      element.style.maxWidth = ( element.getBoundingClientRect().width || element.offsetWidth) + "px";
+    }
+  </script>
+  
+</footer>
+<
+</body>
+</html>
